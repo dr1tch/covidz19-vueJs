@@ -26,7 +26,19 @@
         <div class="row">
           <!-- Left Side Pub -->
           <div class="col-md-6">
-            
+            <div class="row">
+
+            </div>
+            <div style="display: flex; justify-content: center;align-items: flex-end; margin-top: 10%;">
+              <img
+                style="
+                  height: 60px;
+                  width: 60px;
+                  margin-right: 5px;"
+                src="/images/logo.svg"
+                alt="">
+              <h1 style="font-weight: bold;">COVIDZ-19</h1>
+            </div>
 
 
 
