@@ -50,9 +50,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:users', 'alpha_dash'],
+            'fname' => ['required', 'string', 'max:255'],
+            'lname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            // 'birth_date' => ['date'],
+            // 'gender' => ['required', 'boolean']
         ]);
     }
 
@@ -64,10 +68,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if ($data['gender'] == 1) {
+          $avatar = 'public/defaults/avatars/male.svg';
+        } elseif ($data['gender'] == 0) {
+          $avatar = 'public/defaults/avatars/female.svg';
+        } else {
+          $avatar = 'public/defaults/avatars/avatar.png';
+        }
+
         return User::create([
-            'name' => $data['name'],
+          'fname' => ['required', 'string', 'max:255'],
+          'lname' => ['required', 'string', 'max:255'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'birth_date' => $data['birth_date'],
+            'avatar' => $avatar,
+            'gender' => $data['gender'],
         ]);
     }
+
+    // $role = Role::select('id')->where('name', 'user')->first();
+
+    // $user->roles()->attach($role);
+
+    // return $user;
 }
