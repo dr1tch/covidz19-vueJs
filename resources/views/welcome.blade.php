@@ -18,6 +18,9 @@
             background: #15202B;
             overflow: hidden;
           }
+          .signup:hover, .login:hover {
+            background-position: right center;
+          }
         </style>
 
     </head>
@@ -26,10 +29,8 @@
         <div class="row">
           <!-- Left Side Pub -->
           <div class="col-md-6">
-            <div class="row">
-
-            </div>
-            <div style="display: flex; justify-content: center;align-items: flex-end; margin-top: 10%;">
+            <!-- Logo Part -->
+            <div style="display: flex; justify-content: center;align-items: flex-end; margin-top: 8%;">
               <img
                 style="
                   height: 60px;
@@ -38,6 +39,76 @@
                 src="/images/logo.svg"
                 alt="">
               <h1 style="font-weight: bold;">COVIDZ-19</h1>
+            </div>
+
+            <!-- Header welcome sentence -->
+
+            <div style="margin: auto;
+                        margin-top: 8%;
+                        width: 70%;
+                        margin-left: 19%;">
+                <h1 style="font-weight: 600;">Let’s
+                    <span style="font-size: 48px; color: #FE4F60;">Fight</span>
+                    <span style="font-size: 48px; color: #51BFA6;">COVID-19</span>
+                    in Algeria
+                    <span style="font-size: 48px; color: #FE4F60;">TOGETHER</span> .</h1>
+            </div>
+
+            <!-- Join Us Part -->
+
+            <div style="margin: 8% auto;
+                        width: 70%;
+                        margin-left: 19%;">
+                        <h1 style="font-weight: 600; color: #BE6E2D;">Join Us Now</h1>
+            </div>
+
+            <!-- Login And Sign up buttons -->
+
+            <div style="display: block;
+                        margin: 9% auto;
+                        width: 70%;
+                        margin-left: 19%;">
+                        <div class="row">
+                          <a class="login"
+                            style="
+                              background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+                              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                              border-radius: 10px;
+                              width: 86%;
+                              text-align: center;
+                              padding: 8px;
+                              margin: auto;
+                              font-size: 22px;
+                              font-weight: 600;
+                              color: #15202B;
+                              background-size: 200% auto;
+                              transition: 0.5s;
+                              "
+                            href="{{ route('login') }}">Log In</a>
+                        </div>
+                        <div class="row">
+                          @if (Route::has('register'))
+                              <a class="signup"
+                              style="
+                              background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+                              /*linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);*/
+                              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                              border-radius: 10px;
+                              width: 86%;
+                              text-align: center;
+                              padding: 8px;
+                              margin: auto;
+                              margin-top: 6%;
+                              font-size: 22px;
+                              font-weight: 600;
+                              color: #15202B;
+                              background-size: 200% auto;
+                              transition: 0.5s;
+                              "
+                               href="{{ route('register') }}">Sign Up</a>
+                          @endif
+                        </div>
+
             </div>
 
 
