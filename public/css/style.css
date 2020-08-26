@@ -1,0 +1,242 @@
+html{
+  height: 100%;
+
+}
+
+/* Responsive Properties */
+body {
+   height: 100%; 
+  padding: 0;
+   overflow: hidden; 
+  min-height: 100%;
+  background:#15202B;
+  font-family: "Poppins", sans-serif;
+  color: #F4F4F5;
+}
+
+.left-side {
+  margin: auto;
+}
+
+
+
+.logo-container {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  margin-top: 8%;
+}
+
+.logo-img {
+  height: 60px;
+  width: 60px;
+  margin-right: 5px;
+}
+
+.header-title {
+  margin: auto;
+  margin-top: 8%;
+  width: 70%;
+
+  text-align: center;
+}
+
+.discover-ideas {
+  background-image: linear-gradient(25deg, #24032B, #34789D);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 86%;
+  text-align: center;
+  padding: 8px;
+  margin: auto;
+  font-size: 22px;
+  font-weight: 600;
+  color: #F4F4F5;
+  background-size: 200% auto;
+  transition: 0.5s;
+}
+
+.line-separator {
+  width:52%; 
+  border: 2px solid #F4F4F5; 
+  margin: auto; 
+  border-radius: 3px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.tweet-button-container {
+  margin: 8% auto;
+  width: 70%;
+}
+
+.auth-buttons {
+  display: block;
+  margin: 9% auto;
+  width: 70%;
+}
+
+.login {
+  background-image: linear-gradient(25deg, #1DDD77, #1C6FE3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 86%;
+  text-align: center;
+  padding: 8px;
+  margin: auto;
+  font-size: 22px;
+  font-weight: 600;
+  color: #15202B;
+  background-size: 200% auto;
+  transition: 0.5s;
+}
+
+.signup {
+  background-image: linear-gradient(to right, #E040FB, #00BCD4);
+  /*linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);*/
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 86%;
+  text-align: center;
+  padding: 8px;
+  margin: auto;
+  margin-top: 6%;
+  font-size: 22px;
+  font-weight: 600;
+  color: #E4E4F5;
+  background-size: 200% auto;
+  transition: 0.5s;
+}
+
+.signup:hover, .login:hover, .discover-ideas:hover {
+  background-position: bottom center;
+  color: #F4F4F5;
+}
+
+.right-side{
+  background: url(/images/welcome-banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.row {
+  height: 100%;
+}
+
+
+/* 320px — 480px: Mobile devices */
+@media screen and (max-width: 500px) and (min-width: 320px) {
+  .header-logo-text {
+    font-size: 2em;
+  }
+  .h1-header {
+    font-size: 18px;
+  }
+  .span-header {
+    font-size: 22px;
+  }
+
+  .discover-ideas, .login, .signup{
+    font-size: 12px;
+    padding: 8px;
+  }
+  .right-side{
+    display: none;
+  }
+  .row {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 481px — 768px: iPads, Tablets */
+@media screen and (max-width: 768px) and (min-width: 501px)  {
+  /*.span-header {
+    font-size: 26px;
+  }*/
+  .discover-ideas, .login, .signup{
+    font-size: 20px;
+    padding: 10px;
+  }
+  .right-side{
+    display: none;
+  }
+  .row {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 769px — 1024px: Small screens, laptops */
+@media screen and (max-width: 991px) and (min-width: 769px) {
+  .login, .signup, .header-title, .logo-container, .discover-ideas , .tweet-button-container{
+    margin-top: 3%;
+  }
+
+  .tweet-button-container, .auth-buttons {
+    margin: 3% auto;
+    width: 50%;
+  }
+
+  .line-separator {
+    width: 30%;
+    border: 1px solid #F4F4F5; 
+  }
+
+  .right-side{
+    display: none;
+  }
+  .container-fluid {
+    background-image: url(/images/welcome-banner-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: rgba(0, 0, 0, .5); */
+  }
+  .row {
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-img {
+    height: 75px;
+    width: 75px;
+    margin-right: 10px;
+  }
+
+  .discover-ideas, .login, .signup{
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+/* 1201px and more —  Extra large screens, TV */
+@media screen and (min-width: 1201px) {
+
+}
+
+/* 1025px — 1200px: Desktops, large screens */
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+
+  .span-header {
+    font-size: 30px;
+  }
+  .h1-header {
+    font-size: 24px;
+  }
+
+  .col-lg-6 {
+    display: block;
+    max-width: 100%;
+  }
+  .discover-ideas, .login, .signup{
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .left-side {
+    margin: auto;
+  }
+
+}
