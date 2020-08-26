@@ -68,7 +68,7 @@
 
           <!-- Right side Banner -->
 
-          <div class="col-lg-6 right-side img-fluid">
+          <div class="col-lg-6 right-side right-side-welcome img-fluid">
             <!-- <img
               style="border-radius: 17px; padding: 10px; margin: 1% 0"
               class="img-fluid"

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Role;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -49,14 +50,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+         return Validator::make($data, [
             'username' => ['required', 'string', 'max:255', 'unique:users', 'alpha_dash'],
             'fname' => ['required', 'string', 'max:255'],
             'lname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             // 'birth_date' => ['date'],
-            // 'gender' => ['required', 'boolean']
+            // 'gender' => ['boolean']
         ]);
     }
 
@@ -68,28 +69,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if ($data['gender'] == 1) {
+
+        // dd($data);
+        if ($data['gender'] == 0) {
           $avatar = 'public/defaults/avatars/male.svg';
-        } elseif ($data['gender'] == 0) {
+        } elseif ($data['gender'] == 1) {
           $avatar = 'public/defaults/avatars/female.svg';
-        } else {
+        } else if ($data['gender'] == 2) {
           $avatar = 'public/defaults/avatars/avatar.png';
         }
 
-        return User::create([
-          'fname' => ['required', 'string', 'max:255'],
-          'lname' => ['required', 'string', 'max:255'],
+        $user = User::create([
+            'username' => $data['username'],
+            'lname' => $data['lname'],
+            'fname' => $data['fname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'birth_date' => $data['birth_date'],
+            // 'birth_date' => $data['birth_date'],
             'avatar' => $avatar,
             'gender' => $data['gender'],
         ]);
+
+        $role = Role::select('id')->where('name', 'user')->first();
+
+        $user->roles()->attach($role);
+
+        return $user;
     }
-
-    // $role = Role::select('id')->where('name', 'user')->first();
-
-    // $user->roles()->attach($role);
-
-    // return $user;
 }
