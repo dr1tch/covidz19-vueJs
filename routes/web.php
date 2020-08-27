@@ -20,3 +20,23 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::middleware('auth')->group(function(){
+	  Route::get('/home', 'IdeasController@index')->name('home');
+	  Route::get('/ideas', 'IdeasController@')
+});
+
+Route::prefix('admin')->name('admin.')->middleware('can:manage_users')->group(function (){
+	Route::resource('users', 'UserController', ['except' => ['show', 'create', 'store']]);
+	Route::get('/', 'AdminController@index')->name('dashboard');
+
+	// Route::get('/details', function(){
+	// 	return [
+	// 		Auth::user(),
+	// 		auth()->user()->roles
+	// 	];
+	// });
+  Route::resource('ideas', 'IdeasController', ['except' => ['show', 'edit', 'create', 'store']]);
+
+});

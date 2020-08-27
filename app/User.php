@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Role;
+use App\Idea;
 
 class User extends Authenticatable
 {
@@ -64,4 +65,33 @@ class User extends Authenticatable
     {
         $query->where('role', '=', $role);
     }
+
+    public function ideas()
+    {
+      return $this->hasMany(Idea::class)->latest();
+    }
+
+    public function timeline(){
+      //return Idea::latest()->where('user_id', $this->id)->get();
+      // Include all of the user's tweets
+      // as well as the tweets of
+      // everyone they follow.. in descending order by date.
+
+       // $friends = $this->follows->pluck('id');
+      //$ids->push($this->id);
+
+       // return Idea::whereIn('user_id', $friends)
+       //           ->orWhere('user_id', $this->id)
+       //           ->latest()->get();
+      // Displays the ideas for all the users
+       return Idea::latest()->get();
+    }
+
+    public function profile($append = '')
+    {
+      $path = route('profile', $this->username);
+      return $append ? "{$path}/{$append}" : $path;
+    }
+
+    
 }
