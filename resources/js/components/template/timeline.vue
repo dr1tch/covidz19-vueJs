@@ -1,6 +1,6 @@
 <template>
 	
-	<div>
+	<div style="height: 100%;">
 		<SideBar></SideBar>
 		<Wall></Wall>
 		<RightSide></RightSide>

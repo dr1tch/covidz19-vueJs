@@ -6,7 +6,7 @@
 			<a class="logo" href="">
 	            <div class="logo-container logo-container-sidebar">
 	              <img class="logo-img-sidebar"  src="/images/logo.svg" alt="">
-	              <h4 class="header-logo-text-sidebar" style="font-weight: bold;">COVIDZ-19</h4>
+	              <h4 class="header-logo-side" style="font-weight: bold;">COVIDZ-19</h4>
 	            </div>
 	        </a>
 
@@ -14,8 +14,8 @@
 
         	<div>
         		<ul>
-        			<a class="menu-item-link" href="">
-	        			<li class="menu-item">
+        			<a class="menu-item-link " href="">
+	        			<li class="menu-item selected">
 		        				<div class="menu-item-container">
 					              <img class="logo-img-menu"  src="/images/side-menu-icons/lamp.svg" alt="">
 					              <h5 class="header-logo-text-sidebar" style="font-weight: bold;">Ideas</h5>
@@ -96,20 +96,20 @@
         			<button class="btn btn-danger btn-sidebar">Report Something</button>
         		</div>        		
         	</div>
-        	<a href="">
+        	<button class="btn" style="width:100%">
 	        	<div class="profile-sidebar">
 	        		<div class="profile-link-right-side">
   						<img class="img-md"  src="/images/profile.jpg" alt="">
   						<div>
   							<h6 class="header-logo-text-sidebar-link" style="font-weight: bold;">Youssouf Kacemi</h6>
-  							<span>@el.dritch</span>
+  							<span style="float: left; color: #666;">@el.dritch</span>
 	        			</div>
 	        		</div>
 	        		<div style="margin-right: 6%;">
 	        			<img style="width: 16px;height: 16px;" src="/images/side-menu-icons/arrow.svg">
 	        		</div>
 	        	</div>
-        	</a>
+        	</button>
 
 
 

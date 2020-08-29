@@ -24,6 +24,11 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@fortawesome/fontawesome": "^1.1.8",
+        "@fortawesome/fontawesome-free-brands": "^5.0.13",
+        "@fortawesome/fontawesome-free-solid": "^5.0.13",
+        "@fortawesome/vue-fontawesome": "^0.1.10",
+        "bootstrap-icons": "^1.0.0",
         "bootstrap-vue": "^2.16.0",
         "font-awesome": "^4.7.0",
         "globally": "^0.0.0"

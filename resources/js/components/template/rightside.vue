@@ -2,12 +2,17 @@
 		<div class="fixed-right">
 			
 			<!-- Logo Part -->
-			<a class="logo" href="">
-	            <div class="logo-container logo-container-sidebar">
-	              <img class="logo-img-sidebar"  src="/images/logo.svg" alt="">
-	              <h4 class="header-logo-text-sidebar" style="font-weight: bold;">COVIDZ-19</h4>
-	            </div>
-	        </a>
+			<form class="search-bar" method="POST" action="">            
+	            <div class="form-group row">
+		            <div class="col">
+			            <input id="search" type="text" class="form-control" name="search" required autocomplete="search" placeholder="Search">
+			                 
+			            <span class="invalid-feedback" role="alert">
+			                 
+			            </span>    
+		            </div>
+	           	</div>
+			</form>
 		</div>
 
 
@@ -15,7 +20,20 @@
 </template>
 
 <style>
-	
+	form.search-bar {
+		width: 90%;
+		margin:auto;
+		margin-top: 5%;
+		margin-left: 10px;
+
+	}
+
+	input#search {
+		border: none;
+		background-color: #080E14;
+		  color: #F4F4F5;
+		  height: 150%;
+	}
 
 
 </style>

@@ -185,13 +185,109 @@ a.logo, a.logo:hover{
 
 .logo-container-sidebar {
   margin-top: 4%;
-  margin-bottom: 6%
+  margin-bottom: 4%
 }
 
 .logo-img-sidebar {
   height: 40px;
   width: 40px;
   margin-right: 5px;
+}
+
+.header-logo-side {
+  margin-bottom: 0;
+}
+
+
+.col-15 {
+  flex: 0 0 12%;
+  max-width: 12%;
+}
+
+.col-105 {
+  lex: 0 0 88%;
+  max-width: 88%;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.react-container {
+  width: 80%;
+  margin-left: -12px;
+}
+
+
+.react-count-container {
+  padding: 0.6rem 0.75rem;
+  padding-left:0;
+}
+
+.span-react {
+  font-size: .9em;
+  padding: 0.375rem 0.75rem;
+  padding-left: 0;
+
+}
+
+.posts {
+  /*padding: 5px;*/
+  position: relative;
+    top: 72px;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: #F4F4F5;
+  fill: ##15202B;
+}
+
+.post {
+  border-bottom: 1px solid #eee;
+  margin-left: unset;
+  margin-right: unset;
+  padding-bottom: 5px;
+  /*padding-top: 10px;*/
+}
+
+.post-header {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*padding: 10px;*/
+    color: inherit;
+    padding-top: 10px;
+    /*padding-right: 20px;*/
+}
+
+.post-body {
+  padding-right: 15px;
+    margin-top: 2%;
+}
+
+.media {
+  max-width: max-content;
+  /*max-height: auto;*/
+}
+
+.post-media {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
 }
 
 .header-logo-text-sidebar {
@@ -205,9 +301,15 @@ ul a li {
   padding: 10px;
   width: 80%;
   border-radius: 12px;
+  margin-bottom: .5%;
 }
 
 ul li:hover {
+  background-color: #080E14;
+  color: inherit; 
+}
+
+.selected {
   background-color: #080E14;
   color: inherit; 
 }
@@ -232,7 +334,7 @@ ul a:hover {
   display: block;
   margin: auto;
   /*margin-left: 20%;*/
-  width: 50%;
+  width: 60%;
   border-radius: 21px;
     font-weight: 600;
     padding: 10px;
@@ -322,18 +424,24 @@ ul a:hover {
   margin-left: 350px;
   margin-right: 350px;
   width: auto;
+  border: 1px solid #eee;
+  border-top: none;
+  border-bottom: none;
+  padding: 0;
+  height: 120%;
 }
 
 .img-md {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 5%;
+  margin-right: 3%;
+  
 }
 
 .profile-sidebar {
-  background-color: #080E14;
-  width: 75%;
+  
+  width: 85%;
     height: 65px;
     margin: auto;
     border-radius: 40px;
@@ -342,6 +450,10 @@ ul a:hover {
     justify-content: space-between;
     padding: 10px;
     color: inherit;
+}
+
+.profile-sidebar:hover {
+  background-color: #080E14;
 }
 
 .profile-link-right-side {
