@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Role;
 use App\Idea;
 
+
 class User extends Authenticatable
 {
     use Notifiable;

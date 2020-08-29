@@ -1,72 +1,71 @@
 <template>
-	
-<ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        
-                            <li class="nav-item">
-                                <a class="nav-link" href=""></a>
-                            </li>
-                            
-                                <li class="nav-item">
-                                    <a class="nav-link" href=""></a>
-                                </li>
-                           
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                   <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    
-                                    <a class="dropdown-item" href="">
-                                       Profile
-                                    </a>
-                                    
-                                     
-                                    <a class="dropdown-item" href=""
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        
-                                    </a>
-                                   <form id="logout-form" action="" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                       
-                    </ul>
-
+<div class="row">
+	<div class="col">
+		<timeline></timeline>
+	</div>
+	<!-- <div class="col-sm-3">
+		<RightSide></RightSide>
+	</div> -->
+</div>
 </template>
+<style>
+	body {
+		overflow: auto;
+	}
+</style>
 
 <script>
-	
+	import RightSide from '../template/rightside' ;
+	import timeline from '../template/timeline' ;
 	export default {
-		props: [
-			'user', 'role'
-		],
+		// props: [
+		// 	'user', 'role'
+		// ],
 		data: function(){
 			return{
 				isAuthenticated: false,
+				ideas: {},
+				user: []
 				// user : user 
 			}
 			
 		},
 
+		components: {
+			RightSide,
+			// SideBar,
+			timeline
+		},
+
 
 	  	mounted() {
-	  		console.log(this.user);
+	  		// console.log(this.user);
 	  		this.auth();
+	  		console.log(this.isAuthenticated);
+	  		console.log(this.ideas);
+	  		console.log(this.user);
+
 	  	},
 
 		methods: {
 			auth (){
-				axios.get('/admin/details')
-				.then(function(responce){
-					console.log(responce);
+				axios.get('/user/ideas')
+				.then((responce) => {
+					console.log(responce.data);
+					this.isAuthenticated = responce.data.user_check;
+					this.ideas = responce.data.ideas;
+					this.user = responce.data.user;
+					// console.log(this.isAuthenticated);
+					// console.log(isAuthenticated);
 				})
 				.catch(function(error){
 					console.log(error);
-				})
+				});
+			},
+
+			disconnect (){
+				event.preventDefault();
+                document.getElementById('logout-form').submit();
 			}
 		},
 		computed: {

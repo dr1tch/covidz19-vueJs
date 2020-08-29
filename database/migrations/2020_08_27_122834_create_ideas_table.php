@@ -15,6 +15,12 @@ class CreateIdeasTable extends Migration
     {
         Schema::create('ideas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('title');
+            $table->text('body');
+            $table->text('image')->nullable();
+            $table->text('video')->nullable();
+            $table->boolean('status');
             $table->timestamps();
         });
     }

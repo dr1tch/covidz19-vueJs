@@ -19,12 +19,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'IdeasController@index')->name('home');
+Route::get('/user/ideas','IdeasController@getIdeas');
 
 Route::middleware('auth')->group(function(){
-	  Route::get('/home', 'IdeasController@index')->name('home');
-	  Route::get('/ideas', 'IdeasController@')
+
+	  // Route::get('/', 'IdeasController@index')->name('home');
+
 });
 
 Route::prefix('admin')->name('admin.')->middleware('can:manage_users')->group(function (){

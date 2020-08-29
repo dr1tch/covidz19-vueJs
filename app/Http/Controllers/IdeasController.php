@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use App\User;
 use App\Ideas;
@@ -24,11 +25,21 @@ class IdeasController extends Controller
         //     'ideas' => Idea::latest()->get()
         //   ]);
         // }
-        $ideas = Idea::where('status', 1);
-        return view('user.ideas.index',[
-            'ideas' => $ideas->latest()->get(),
-            'categories' => Categorie::all()
+        // $ideas = Idea::where('status', 1);
+        return view('user.index',[
+            // "ideas" => "Youssouf"
+            // 'ideas' => Ideas::all(),
+            // 'categories' => Categorie::all()
           ]);
+    }
+
+
+    public function getIdeas(User $user){
+        return [
+         'user_check' => Auth::check(),
+         'ideas' => Ideas::all(),
+         'user' => Auth::user()
+         ];
     }
 
     /**

@@ -19,7 +19,16 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('admin-dash', require('./components/admin/home.vue').default);
+Vue.component('AdminHome', require('./components/admin/home.vue').default);
+Vue.component('user-home', require('./components/user/home.vue').default);
+Vue.component('SideBar', require('./components/template/sidebar.vue').default);
+Vue.component('timeline', require('./components/template/timeline.vue').default);
+Vue.component('RightSide', require('./components/template/rightside.vue').default);
+Vue.component('Wall', require('./components/template/wall.vue').default);
+
+
+
+// Vue.component('Header', require('./components/admin/admin.home.vue').default
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

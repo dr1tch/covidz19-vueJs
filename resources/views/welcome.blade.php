@@ -42,7 +42,7 @@
 
             <div class="tweet-button-container">
                         <div class="row">
-                          <a href="/ideas" class="discover-ideas">Discover Our Ideas to fight it!</a>
+                          <a href="/home" class="discover-ideas">Discover Our Ideas to fight it!</a>
                         </div>
 
             </div>
