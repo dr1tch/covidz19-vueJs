@@ -304,7 +304,7 @@ ul a li {
   margin-bottom: .5%;
 }
 
-ul li:hover {
+ul li.menu-item:hover {
   background-color: #080E14;
   color: inherit; 
 }
@@ -344,8 +344,28 @@ ul a:hover {
   margin-bottom: 4%;
 }
 
+.main-wall-header {
+  padding: 10px 15px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    position: fixed;
+    top: 0;
+    z-index: 3333;
+    background: #15202B;
+    right: 350px;
+    left: 350px;
+    margin: auto 16px;
+    /*margin-left: 16px;*/
+    /*width: 619px;*/
+}
 
 
+.profile-bottom {
+  list-style: none;
+  position: fixed;
+  bottom: 0px;
+  left: 40px;
+  width: 22%;
+}
 
 .logo-img-menu {
   width: 25px;
@@ -357,7 +377,8 @@ ul a:hover {
   position:fixed;
   top:0;
   left:0;
-  z-index:1030
+  z-index:1030;
+  width:350px;
   }
 
   .fixed-right {
@@ -441,7 +462,7 @@ ul a:hover {
 
 .profile-sidebar {
   
-  width: 85%;
+  /*width: 85%;*/
     height: 65px;
     margin: auto;
     border-radius: 40px;
@@ -467,7 +488,6 @@ ul a:hover {
 @media screen and (min-width: 769px) {
   .fixed-left{
     bottom:0;
-    width:350px;
     /*flex-flow:column nowrap;*/
     /*align-items:flex-start;*/
     right:auto
@@ -483,7 +503,7 @@ ul a:hover {
 }
 
 
-
+  
 /* 769px — 1024px: Small screens, laptops */
 @media screen and (max-width: 991px) and (min-width: 769px) {
   .login, .signup, .header-title, .logo-container, .discover-ideas , .tweet-button-container{
@@ -528,9 +548,157 @@ ul a:hover {
   }
 }
 
-/* 1201px and more —  Extra large screens, TV */
-@media screen and (min-width: 1201px) {
+.text-button {
+  font-size: .9em;
+}
 
+
+@media screen and (max-width: 1024px) {
+
+  .header-logo-text-sidebar {
+    display: none;
+  }
+
+  /*.left-side {
+    width: 75px;
+  }*/
+
+  .fixed-left{
+    bottom:0;
+    right:auto;
+    width: 100px;
+    margin-left: 1%;
+  }
+
+  .fixed-right {
+    bottom:0;
+    width:350px;
+    /*flex-flow:column nowrap;*/
+    /*align-items:flex-start;*/
+    left:auto
+  }
+
+  .logo-container-sidebar {
+    margin-top: 19%;
+    margin-bottom: 25%;
+  }
+
+   .header-logo-side {
+    display: none;
+   }
+
+   ul a li {
+    list-style: none;
+    /*margin: 6%;*/
+    padding: 10px;
+    /*border-radius: 50%;*/
+    margin: 5% auto;
+  }
+
+  .menu-item-container {
+    justify-content: center;
+    margin: auto;
+  }
+
+  .text-button {
+    display: none;
+  }
+
+  button#post, button#report {
+    width: fit-content;
+  }
+
+  .btn-sidebar {
+    padding: 7px;
+  }
+
+  .btn-sidebar:first-child {
+    margin-bottom: 10%;
+}
+
+
+  .profile-bottom {
+    /*bottom: 1%;*/
+    left: 15px;
+    width: auto;
+    margin-left: 1%;
+  }
+
+  .profile-sidebar {
+    /*height: 87px;*/
+    /*margin: auto;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;*/
+    /* padding: 10px; */
+    /*color: inherit;*/
+    padding: 0;
+
+  }
+
+  .profile-sidebar:hover {
+  background-color: transparent;
+}
+
+
+  .username {
+    display: none;
+  }
+
+  .up-arrow-part {
+    display: none;
+  }
+
+  .profile-ticket {
+    width: auto;
+  }
+
+  .img-bottom {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    /*margin-right: 3%;*/
+  }
+
+  .header-logo-text-sidebar-link {
+    display: none;
+  }
+
+  .logo-img-menu {
+    width: 25px;
+    height: 25px;
+    margin: auto;
+  }
+
+  .main-wall {
+    margin-left: 100px;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .main-wall-header {
+    left: 100px;
+    margin: auto 16px;
+  }
+
+  .menu-item {
+    /*padding: 0;*/
+    width: fit-content;
+  }
+
+}
+
+
+
+/* 1201px and more —  Extra large screens, TV */
+@media screen and (min-width: 1025px) {
+
+  .left-side {
+    width:350px;
+  }
 }
 
 /* 1025px — 1200px: Desktops, large screens */
