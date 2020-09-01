@@ -22,6 +22,9 @@ Vue.component('Wall', require('./components/template/wall.vue').default);
 Vue.component('React', require('./components/template/reactions.vue').default);
 Vue.component('Post', require('./components/template/post.vue').default);
 Vue.component('Posts', require('./components/template/posts.vue').default);
+Vue.component('SearchBar', require('./components/template/search-bar.vue').default);
+Vue.component('Suggestion', require('./components/template/suggestion.vue').default);
+Vue.component('Suggestions', require('./components/template/suggestions.vue').default);
 
 
 

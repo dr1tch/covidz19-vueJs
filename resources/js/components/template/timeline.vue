@@ -1,6 +1,6 @@
 <template>
 	
-	<div style="height: 100%;">
+	<div class="home-container" style="height: 100%;">
 		<SideBar></SideBar>
 		<Wall></Wall>
 		<RightSide></RightSide>

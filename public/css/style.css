@@ -3,6 +3,8 @@ html{
 
 }
 
+
+
 input.form-control,  select.form-control{
   background: rgba(21, 32, 80, 0.4);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -181,17 +183,26 @@ a.logo, a.logo:hover{
   height: 100%;
 }
 
+
+.img-pb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
 /* Main Sidebar Menu */
 
 .logo-container-sidebar {
   margin-top: 4%;
-  margin-bottom: 4%
+  margin-bottom: 4%;
+  padding-inline-start: 40px;
+  justify-content: start;
 }
 
 .logo-img-sidebar {
   height: 40px;
   width: 40px;
-  margin-right: 5px;
+  /*margin-right: 5px;*/
 }
 
 .header-logo-side {
@@ -199,7 +210,7 @@ a.logo, a.logo:hover{
 }
 
 
-.col-15 {
+/*.col-15 {
   flex: 0 0 12%;
   max-width: 12%;
 }
@@ -208,10 +219,14 @@ a.logo, a.logo:hover{
   lex: 0 0 88%;
   max-width: 88%;
 }
-
+*/
 
 .flex {
   display: flex;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
 }
 
 .justify-between {
@@ -287,7 +302,7 @@ a.logo, a.logo:hover{
 .post-media {
   width: 100%;
   height: auto;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 .header-logo-text-sidebar {
@@ -295,24 +310,56 @@ a.logo, a.logo:hover{
   font-size: 1.15em;
 }
 
+a.post-name:hover {
+  text-decoration: underline;
+}
+
+.post-username {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: start;
+}
+
 ul a li {
   list-style: none;
   /*margin: 6%;*/
-  padding: 10px;
-  width: 80%;
-  border-radius: 12px;
-  margin-bottom: .5%;
+  padding: 10px 30px;
+  width: fit-content;
+  border-radius: 20px;
+  margin-bottom: 2.5%;
+}
+
+.bi::before {
+  display: inline-block;
+  content: "";
+  background-image: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z' clip-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+}
+
+.mr-3 {
+  margin-right: 3%;
 }
 
 ul li.menu-item:hover {
-  background-color: #080E14;
-  color: inherit; 
+  background-color: rgba(254, 80, 96, 0.1);
+  color: rgb(254, 80, 96); 
 }
 
+
+
 .selected {
-  background-color: #080E14;
-  color: inherit; 
+  background-color: rgba(254, 80, 96, 0.1);
+  color: rgb(254, 80, 96); 
 }
+
+.logo-side-color {
+  color: #fe5060;
+}
+
+
 
 ul a {
   text-decoration: none;
@@ -327,17 +374,16 @@ ul a:hover {
   display: flex;
   justify-content: start;
   align-items: center;
-  margin-left: 7%;
+  /*margin-left: 7%;*/
+  /*padding: auto 5px*/
 }
 
 .btn-sidebar {
   display: block;
-  margin: auto;
-  /*margin-left: 20%;*/
-  width: 60%;
+  width: 80%;
   border-radius: 21px;
-    font-weight: 600;
-    padding: 10px;
+  font-weight: 600;
+  padding: 10px;
 }
 
 .btn-sidebar:first-child {
@@ -345,26 +391,25 @@ ul a:hover {
 }
 
 .main-wall-header {
+  max-width: 748px;
+  margin-right: auto;
   padding: 10px 15px;
-    border-bottom: 1px solid rgb(238, 238, 238);
-    position: fixed;
-    top: 0;
-    z-index: 3333;
-    background: #15202B;
-    right: 350px;
-    left: 350px;
-    margin: auto 16px;
-    /*margin-left: 16px;*/
-    /*width: 619px;*/
+  border-bottom: 1px solid rgb(238, 238, 238);
+  position: fixed;
+  top: 0;
+  z-index: 3333;
+  background: #15202B;
+  right: 350px;
+  left: 275px;
+  margin: auto 1px;
+  /*margin-left: 16px;*/
+  /*width: 100%;*/
 }
 
 
 .profile-bottom {
   list-style: none;
-  position: fixed;
-  bottom: 0px;
-  left: 40px;
-  width: 22%;
+  margin-left: -13%;
 }
 
 .logo-img-menu {
@@ -376,16 +421,19 @@ ul a:hover {
 .fixed-left{
   position:fixed;
   top:0;
-  left:0;
+  /*left:0;*/
   z-index:1030;
-  width:350px;
+  width:275px;
+  overflow-y: auto;
+  overflow-x: hidden;
   }
 
   .fixed-right {
     position:fixed;
     top:0;
     right:0;
-    z-index:1030
+    z-index:1030;
+    width: 245px;
   }
 
   .header-logo-text-sidebar-link {
@@ -412,7 +460,7 @@ ul a:hover {
   .right-side{
     display: none;
   }
-  .row {
+  .wrap {
     align-items: center;
     justify-content: center;
   }
@@ -434,7 +482,7 @@ ul a:hover {
   .right-side{
     display: none;
   }
-  .row {
+  .wrap {
     align-items: center;
     justify-content: center;
   }
@@ -442,7 +490,7 @@ ul a:hover {
 }
 
 .main-wall {
-  margin-left: 350px;
+  margin-left: 275px;
   margin-right: 350px;
   width: auto;
   border: 1px solid #eee;
@@ -450,6 +498,8 @@ ul a:hover {
   border-bottom: none;
   padding: 0;
   height: 120%;
+  max-width: 750px;
+  min-width: 400px;
 }
 
 .img-md {
@@ -459,6 +509,9 @@ ul a:hover {
   margin-right: 3%;
   
 }
+
+
+  
 
 .profile-sidebar {
   
@@ -474,7 +527,7 @@ ul a:hover {
 }
 
 .profile-sidebar:hover {
-  background-color: #080E14;
+  background-color: rgba(254, 80, 96, 0.1);
 }
 
 .profile-link-right-side {
@@ -532,7 +585,7 @@ ul a:hover {
     background-size: cover;
     /* background-color: rgba(0, 0, 0, .5); */
   }
-  .row {
+  .wrap {
     align-items: center;
     justify-content: center;
   }
@@ -555,9 +608,9 @@ ul a:hover {
 
 @media screen and (max-width: 1024px) {
 
-  .header-logo-text-sidebar {
+  /*.header-logo-text-sidebar {
     display: none;
-  }
+  }*/
 
   /*.left-side {
     width: 75px;
@@ -567,7 +620,7 @@ ul a:hover {
     bottom:0;
     right:auto;
     width: 100px;
-    margin-left: 1%;
+    /*margin-left: 1%;*/
   }
 
   .fixed-right {
@@ -579,8 +632,8 @@ ul a:hover {
   }
 
   .logo-container-sidebar {
-    margin-top: 19%;
-    margin-bottom: 25%;
+    margin: 19% auto 25% auto;
+    justify-content: center;
   }
 
    .header-logo-side {
@@ -591,13 +644,22 @@ ul a:hover {
     list-style: none;
     /*margin: 6%;*/
     padding: 10px;
-    /*border-radius: 50%;*/
+    border-radius: 50%;
     margin: 5% auto;
   }
 
   .menu-item-container {
     justify-content: center;
     margin: auto;
+  }
+
+  .button-part {
+    margin: 25% auto;
+    /*padding-left: 10px;*/
+  }
+
+  .button-part div:first-child {
+    margin-bottom: 25%;
   }
 
   .text-button {
@@ -618,10 +680,7 @@ ul a:hover {
 
 
   .profile-bottom {
-    /*bottom: 1%;*/
-    left: 15px;
     width: auto;
-    margin-left: 1%;
   }
 
   .profile-sidebar {
@@ -635,6 +694,209 @@ ul a:hover {
     /*color: inherit;*/
     padding: 0;
 
+  }
+
+  .btn-sidebar {
+    margin: auto;
+  }
+
+  .profile-sidebar:hover {
+    background-color: transparent;
+}
+
+
+  .username {
+    display: none;
+  }
+
+  .up-arrow-part {
+    display: none;
+  }
+
+  .profile-ticket {
+    width: auto;
+  }
+
+  .img-bottom {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    /*margin-right: 3%;*/
+  }
+
+  .header-logo-text-sidebar-link {
+    display: none;
+  }
+
+  .logo-img-menu {
+    width: 25px;
+    height: 25px;
+    margin: auto;
+  }
+
+  .main-wall {
+    margin-left: 100px;
+  }
+
+  ul {
+    /*padding: 0;*/
+  }
+
+  .main-wall-header {
+    left: 100px;
+    margin: auto 1px;
+  }
+
+  .menu-item {
+    /*padding: 0;*/
+    width: fit-content;
+  }
+
+}
+
+
+
+
+@media screen and (min-width: 1280px) {
+
+  
+}
+
+/* 1201px and more —  Extra large screens, TV */
+@media screen and (min-width: 1025px) {
+
+  .left-side {
+    /*width:350px;*/
+  }
+}
+
+
+
+@media screen and (min-width: 1025px) {
+
+  .left-side {
+    /*width:350px;*/
+  }
+}
+
+/* 1025px — 1200px: Desktops, large screens */
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+
+  .span-header {
+    font-size: 30px;
+  }
+  .h1-header {
+    font-size: 24px;
+  }
+
+  .col-lg-6 {
+    display: block;
+    max-width: 100%;
+  }
+  .discover-ideas, .login, .signup{
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .left-side {
+    margin: auto;
+  }
+  .forget-pwd {
+    float: right; 
+    font-size: 0.8em;
+  }
+
+
+}
+@media screen and (max-width: 1200px) {
+  .fixed-left{
+    bottom:0;
+    right:auto;
+    width: 100px;
+    /*margin-left: 1%;*/
+  }
+
+  .fixed-right {
+    bottom:0;
+    width:350px;
+    left:auto;
+  }
+  .logo-container-sidebar {
+    margin: 19% auto 25% auto;
+    justify-content: center;
+  }
+
+  .header-logo-text-sidebar {
+    display: none;
+  }
+
+   .header-logo-side {
+    display: none;
+   }
+
+   ul a li {
+    list-style: none;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5% auto;
+  }
+
+  .menu-item-container {
+    justify-content: center;
+    margin: auto;
+  }
+
+  .button-part {
+    margin: 25% auto;
+    /*padding-left: 10px;*/
+  }
+
+  .button-part div:first-child {
+    margin-bottom: 25%;
+  }
+
+  .text-button {
+    display: none;
+  }
+
+  button#post, button#report {
+    width: fit-content;
+  }
+
+  .btn-sidebar {
+    padding: 7px;
+  }
+
+  .btn-sidebar:first-child {
+    margin-bottom: 10%;
+}
+
+ul, .logo-container-sidebar {
+  padding-inline-start: 20px;
+}
+
+
+
+  .profile-bottom {
+    width: auto;
+    margin: auto;
+  }
+
+  .profile-sidebar {
+    /*height: 87px;*/
+    /*margin: auto;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;*/
+    /* padding: 10px; */
+    /*color: inherit;*/
+    padding: 0;
+
+  }
+
+  .btn-sidebar {
+    margin: auto;
   }
 
   .profile-sidebar:hover {
@@ -676,12 +938,12 @@ ul a:hover {
   }
 
   ul {
-    padding: 0;
+    /*padding: 0;*/
   }
 
   .main-wall-header {
     left: 100px;
-    margin: auto 16px;
+    margin: auto 1px;
   }
 
   .menu-item {
@@ -689,43 +951,155 @@ ul a:hover {
     width: fit-content;
   }
 
+  .profile-details, .up-arrow-part {
+    display: none;
+  }
+
+  .m-b-report {
+  margin-bottom: 3px;
+}
 }
 
 
 
-/* 1201px and more —  Extra large screens, TV */
-@media screen and (min-width: 1025px) {
 
-  .left-side {
-    width:350px;
-  }
-}
+@media screen  and (max-width: 950px){
+      .fixed-right {
+        display: none;
+      }
 
-/* 1025px — 1200px: Desktops, large screens */
-@media screen and (max-width: 1200px) and (min-width: 992px) {
+      .main-wall {
+        margin: auto;
+        margin-left: 75px;
+        margin-right: 0;
+      }
 
-  .span-header {
-    font-size: 30px;
-  }
-  .h1-header {
-    font-size: 24px;
+      .main-wall-header {
+        left: 100px;
+        /*margin: auto;*/
+      }
+
+      .fixed-left {
+        width: 75px;
+        margin-left: 0;
+
+      }
+
+      ul, .logo-container-sidebar {
+        padding-inline-start: 0px;
+      }
+
+      .main-wall-header {
+          left: 75px;
+          margin: auto 1px;
+          margin-right: 0;
+          right: 0;
+      }
   }
 
-  .col-lg-6 {
-    display: block;
-    max-width: 100%;
-  }
-  .discover-ideas, .login, .signup{
-    font-size: 18px;
-    padding: 10px;
+
+  @media screen and (max-width: 500px) {
+    .fixed-right {
+      display: none;
+    }
+
+    .fixed-left {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 48px;
+      top: auto;
+      width: 100%;
+      margin-bottom: 0;
+      background: #15202B;
+      border-top: 1px solid #666;
+    }
+
+    .fixed-left ul {
+      display: flex;
+      margin-bottom: 0;
+      margin: 0;
+      padding: 0;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+    }
+
+    ul, .logo-container-sidebar {
+        padding-inline-start: 0px;
+    }
+
+
+    .menu-item {
+    /* padding: 0; */
+    width: fit-content;
+    /* width: 100%;*/
+    }
+
+    .hide-menu {
+      display: none;
+    }
+
+    .main-wall {
+      left:0;
+      margin-left: 0;
+      border: none;
+    }
+
+    .main-wall-header {
+          left: 0px;
+          margin: auto 1px;
+          margin-right: 0;
+          /*margin-left: 0;*/
+          right: 0;
+          /*width: 100%;*/
+      }
+
+      button.humburger {
+        color: #F4F4F5;
+        display: block !important;
+      }
+
+
+
+      .dropd-menu{
+        display: block;
+        position: fixed;
+        background-color: #15202B;
+        top: 70px;
+        right: 0;
+        left: 200px;
+        bottom: 48px;
+        z-index: 999;
+      }
+      .menu-item-container {
+        align-items: end
+      }
+
+      .dropd-menu ul {
+        display: block;
+      }
+
+      li.hidden:hover {
+        border-radius: unset;
+        width: 100%;
+        margin: auto;
+      }
+
+      li.hidden {
+        margin: auto;
+        padding: 10% 0;
+      }
+
+      button.humburger:hover {
+        background-color: rgba(254, 80, 96, 0.1);
+        color: rgb(254, 80, 96);
+        border-radius: 50%;
+      }
   }
 
-  .left-side {
-    margin: auto;
-  }
-  .forget-pwd {
-    float: right; 
-    font-size: 0.8em;
+  button.humburger {
+    display: none;
   }
 
-}

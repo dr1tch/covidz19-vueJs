@@ -1,12 +1,7 @@
 <template>
-<div class="row">
-	<div class="col">
+	<div class="row">
 		<timeline></timeline>
 	</div>
-	<!-- <div class="col-sm-3">
-		<RightSide></RightSide>
-	</div> -->
-</div>
 </template>
 <style>
 	body {
@@ -15,7 +10,6 @@
 </style>
 
 <script>
-	import RightSide from '../template/rightside' ;
 	import timeline from '../template/timeline' ;
 	export default {
 		// props: [
@@ -32,7 +26,6 @@
 		},
 
 		components: {
-			RightSide,
 			// SideBar,
 			timeline
 		},
