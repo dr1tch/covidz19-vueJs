@@ -26,10 +26,10 @@
 					            </div>
 	        			</li>
         			</a>
-        			<a class="menu-item-link" href="">
-	        			<li class="menu-item">
+        			<a class="menu-item-link hide-menu" href="">
+	        			<li class="menu-item ">
 		        				<div class="menu-item-container">
-					              <!-- <img class="logo-img-menu"  src="/images/side-menu-icons/reports.svg" alt=""> -->
+					              
 									<svg width="1.5625em" height="1.5em" viewBox="0 0 17 16" class="bi bi-exclamation-triangle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 									  <path fill-rule="evenodd" d="M7.938 2.016a.146.146 0 0 0-.054.057L1.027 13.74a.176.176 0 0 0-.002.183c.016.03.037.05.054.06.015.01.034.017.066.017h13.713a.12.12 0 0 0 .066-.017.163.163 0 0 0 .055-.06.176.176 0 0 0-.003-.183L8.12 2.073a.146.146 0 0 0-.054-.057A.13.13 0 0 0 8.002 2a.13.13 0 0 0-.064.016zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
 									  <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
@@ -61,6 +61,7 @@
 					            </div>
 	        			</li>
         			</a>
+        			
         			<a class="menu-item-link hide-menu" href="">
 	        			<li class="menu-item">
 		        				<div class="menu-item-container">
@@ -73,7 +74,7 @@
 					            </div>
 	        			</li>
         			</a>
-        			<a class="menu-item-link hide-menu" href="">
+        			<a class="menu-item-link " href="">
 	        			<li class="menu-item">
 		        				<div class="menu-item-container">
 					              <!-- <img class="logo-img-menu"  src="/images/side-menu-icons/bell.svg" alt=""> -->
@@ -128,6 +129,17 @@
 					        		</div>  
 					        	</div>
 	        			</li>
+	        			<li class="menu-item humburger-list">
+		        				
+			             <button @click="hamb_click" class="btn hamburger" style="display; none;  padding: 0">
+							<svg viewBox="0 0 100 80" width="1.5em" height="1.5em" fill="currentColor">
+							    <rect width="100" height="20" rx="8"></rect>
+							    <rect y="30" width="100" height="20" rx="8"></rect>
+							    <rect y="60" width="100" height="20" rx="8"></rect>
+							</svg>
+						</button>
+					         
+	        			</li>
 
 
 	        			<li class="profile-bottom hide-menu">
@@ -156,7 +168,7 @@
         		</ul>
         	</div>
 		</div>
-		<div class="dropd-menu" style="display: none;">
+		<div id="side-menu" class="dropd-menu" style="display: none;">
         		<ul >
         			<a class="menu-item-link" href="">
 	        			<li class="menu-item hidden">
@@ -170,18 +182,7 @@
 					            </div>
 	        			</li>
         			</a>
-        			<a class="menu-item-link" href="">
-	        			<li class="menu-item hidden">
-		        				<div class="menu-item-container">
-					              <!-- <img class="logo-img-menu"  src="/images/side-menu-icons/bell.svg" alt=""> -->
-					              <svg style="font-weight: bold;" width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-									  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
-									  <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-									</svg>
-					              <h5 class="ml-3" style="font-weight: bold;">Notifications</h5>
-					            </div>
-	        			</li>
-        			</a>
+        			
         			<a class="menu-item-link " href="">
 	        			<li class="menu-item hidden">
 		        				<div class="menu-item-container">
@@ -242,5 +243,34 @@
 
 
 <script>
+
+	export default {
+
+		data: function() {
+			return {
+
+			}
+		},
+
+		mounted() {
+
+		},
+
+		methods: {
+			hamb_click(){
+				let e = document.querySelector("#side-menu");
+				let v = document.querySelector('div.main-wall');
+				
+
+				if (e.style.display == 'none') {
+					e.style.display = 'block';
+					v.style.filter = "blur(8px)";
+				} else {
+					e.style.display = 'none';
+					v.style.filter = "blur(0px)"
+				}
+			}
+		}
+	}
 	
 </script>

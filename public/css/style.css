@@ -290,7 +290,7 @@ a.logo, a.logo:hover{
 }
 
 .post-body {
-  padding-right: 15px;
+  /*padding-right: 15px;*/
     margin-top: 2%;
 }
 
@@ -322,13 +322,17 @@ a.post-name:hover {
   align-self: start;
 }
 
-ul a li {
+ul a li, li.hamburger-list {
   list-style: none;
   /*margin: 6%;*/
   padding: 10px 30px;
   width: fit-content;
   border-radius: 20px;
   margin-bottom: 2.5%;
+}
+
+.humburger-list {
+  display: none;
 }
 
 .bi::before {
@@ -640,7 +644,7 @@ ul a:hover {
     display: none;
    }
 
-   ul a li {
+   ul a li, li.hamburger-list {
     list-style: none;
     /*margin: 6%;*/
     padding: 10px;
@@ -834,7 +838,7 @@ ul a:hover {
     display: none;
    }
 
-   ul a li {
+   ul a li, li.hamburger-list {
     list-style: none;
     padding: 10px;
     border-radius: 50%;
@@ -1005,15 +1009,20 @@ ul, .logo-container-sidebar {
 
     .fixed-left {
       position: fixed;
-      bottom: 0;
+      bottom: auto;
       right: 0;
       left: 0;
-      height: 48px;
-      top: auto;
+      height: 52px;
+      top: 0;
       width: 100%;
       margin-bottom: 0;
       background: #15202B;
-      border-top: 1px solid #666;
+      border-bottom: 1px solid #666;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    .main-wall-header {
+      display: none;
     }
 
     .fixed-left ul {
@@ -1047,16 +1056,16 @@ ul, .logo-container-sidebar {
       border: none;
     }
 
-    .main-wall-header {
+    /*.main-wall-header {
           left: 0px;
           margin: auto 1px;
           margin-right: 0;
-          /*margin-left: 0;*/
+          margin-left: 0;
           right: 0;
-          /*width: 100%;*/
-      }
+          width: 100%;
+      }*/
 
-      button.humburger {
+      li button.humburger {
         color: #F4F4F5;
         display: block !important;
       }
@@ -1067,10 +1076,10 @@ ul, .logo-container-sidebar {
         display: block;
         position: fixed;
         background-color: #15202B;
-        top: 70px;
+        top: 52px;
         right: 0;
-        left: 200px;
-        bottom: 48px;
+        left: 0px;
+        bottom: auto;
         z-index: 999;
       }
       .menu-item-container {
@@ -1089,17 +1098,77 @@ ul, .logo-container-sidebar {
 
       li.hidden {
         margin: auto;
-        padding: 10% 0;
+        padding: 4% 0;
       }
 
-      button.humburger:hover {
+      .humburger-list {
+        display: block;
+        padding: 8px;
+        /*color: #F4F4F5 ;*/
+      }
+      ul li button.hamburger {
+        padding: 0;
+        color: #F4F4F5;
+      }
+
+      ul li button svg, ul li svg {
+        width: 1.3em;
+        height: 1.3em;
+      }
+
+      ul li button.hamburger:hover {
+        padding: 0;
+        color: rgb(254, 80, 96) !important;
+      }
+
+      /*ul li.humburger-list:hover {
         background-color: rgba(254, 80, 96, 0.1);
-        color: rgb(254, 80, 96);
+        color: rgb(254, 80, 96) !important;
         border-radius: 50%;
+      }*/
+
+      ul li.menu-item:hover {
+          background-color: rgba(254, 80, 96, 0.1);
+          color: rgb(254, 80, 96);
+          /*border-radius: 50%*/
+      }
+
+      ul li.humburger-list:hover {
+        background-color: transparent;
+        color: rgb(254, 80, 96) !important;
+        /*border-radius: 50%;*/
+      }
+
+      ul {
+        margin-bottom: 0;
+      }
+
+      .posts {
+        top: 50px;
+      }
+
+      .post {
+        padding-left: 0.5em !important;
+        padding-right: 0.5em !important;
+      }
+
+      .post-body {
+        margin: auto;
+        margin-right: 1em !important;
+      }
+
+      .img-md {
+        width: 40px;
+        height: 40px;
+        margin: 20% 10% 10% 13% !important;
+      }
+
+      .posts {
+        font-size: 90%;
       }
   }
 
-  button.humburger {
+  /*button.hamburger {
     display: none;
   }
-
+*/

@@ -23,7 +23,7 @@
     		<div>
 	    		<span style="font-size: 0.9em; color: #999">1 min ago</span>
 	    	</div>
-        	<div class="mr-4 mt-1">
+        	<div class="post-body mr-4 mt-1">
         		<div class="text">
         			<p>Hello people! i'm building the most amzing website to fight COVID-19. JOIN ME NOW IF YOU WANT TO KNOW MORE!</p>
         		</div>
